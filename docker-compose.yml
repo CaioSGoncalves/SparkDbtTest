@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+
+  dbt-spark2-thrift:
+    image: godatadriven/spark:2
+    ports:
+      - "10000:10000"
+      - "4040:4040"
+    depends_on:
+      - dbt-hive-metastore
+    command: >
+      --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2
+      --name Thrift JDBC/ODBC Server
+    volumes:
+      - ./.spark-warehouse/:/spark-warehouse/
+      - ./hive-site.xml:/usr/spark/conf/hive-site.xml
+    environment:
+      - WAIT_FOR=dbt-hive-metastore:5432
+
+  dbt-hive-metastore:
+    image: postgres:9.6.17-alpine
+    volumes:
+      - ./.hive-metastore/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=dbt
+      - POSTGRES_PASSWORD=dbt
+      - POSTGRES_DB=metastore
+
+
+  zeppelin:
+    container_name: "zeppelin"
+    image: apache/zeppelin:0.9.0
+    ports:
+        - 8080:8080
+    volumes:
+        - ./.spark-warehouse/:/spark-warehouse/
+        - ./zeppelin:/zeppelin/notebook
