@@ -1,0 +1,107 @@
+{
+  "paragraphs": [
+    {
+      "text": "val my_first_dbt_model \u003d spark.read.format(\"parquet\").load(\"/spark-warehouse/analytics.db/my_first_dbt_model\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-24 19:32:47.506",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmy_first_dbt_model\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [id: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1598296724624_109409262",
+      "id": "paragraph_1598296724624_109409262",
+      "dateCreated": "2020-08-24 19:18:44.624",
+      "dateStarted": "2020-08-24 19:32:47.544",
+      "dateFinished": "2020-08-24 19:32:49.767",
+      "status": "FINISHED"
+    },
+    {
+      "text": "my_first_dbt_model.show()\n\nmy_first_dbt_model.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-24 19:32:51.921",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+\n|  id|\n+----+\n|   1|\n|null|\n+----+\n\nroot\n |-- id: integer (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1598297202468_875920828",
+      "id": "paragraph_1598297202468_875920828",
+      "dateCreated": "2020-08-24 19:26:42.468",
+      "dateStarted": "2020-08-24 19:32:51.977",
+      "dateFinished": "2020-08-24 19:32:54.145",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1598297448088_-361500194",
+      "id": "paragraph_1598297448088_-361500194",
+      "dateCreated": "2020-08-24 19:30:48.091",
+      "status": "READY"
+    }
+  ],
+  "name": "Queries",
+  "id": "2FHQQCESV",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
